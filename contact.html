@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | AURELIA</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .contact-section {
+            padding-top: 10rem;
+        }
+
+        .contact-form {
+            background-color: var(--color-bg-secondary);
+            padding: 3rem;
+            border: 1px solid var(--color-border);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-secondary);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid var(--color-border);
+            padding: 1rem 0;
+            color: #fff;
+            font-family: var(--font-body);
+            transition: var(--transition-fast);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--color-accent);
+        }
+
+        .contact-info h3 {
+            margin-top: 2rem;
+            font-size: 1.25rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container flex-center header-inner">
+            <a href="index.html" class="logo">AURELIA.</a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Collections</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="contact.html" class="btn-text" style="color: var(--color-accent);">Contact</a>
+                <div class="cart-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path
+                            d="M6 2L3 6V20C3 20.5304 3.21071 21.0391 3.58579 21.4142C3.96086 21.7893 4.46957 22 5 22H19C19.5304 22 20.0391 21.7893 20.4142 21.4142C20.7893 21.0391 21 20.5304 21 20V6L18 2H6Z"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3 6H21" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M16 10C16 11.0609 15.5786 12.0783 14.8284 12.8284C14.0783 13.5786 13.0609 14 12 14C10.9391 14 9.92172 13.5786 9.17157 12.8284C8.42143 12.0783 8 11.0609 8 10"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="cart-badge" style="display: none;">0</div>
+                </div>
+                <div class="menu-toggle">Menu</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <section class="contact-section container section-padding">
+        <div class="grid-2-uneven">
+            <div class="contact-info" data-aos="fade-right">
+                <span class="overline">Get in Touch</span>
+                <h1>Let's design your sanctuary.</h1>
+                <p>We are here to help you select the perfect pieces for your home. Reach out to us for consultations,
+                    shipping inquiries, or custom orders.</p>
+
+                <h3>Showroom</h3>
+                <p>128 Rue de Rivoli<br>75001 Paris, France</p>
+
+                <h3>Email</h3>
+                <p>concierge@aurelia.com</p>
+
+                <h3>Phone</h3>
+                <p>+33 1 42 68 53 00</p>
+            </div>
+
+            <div class="contact-form" data-aos="fade-left">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input type="text" id="contact-name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" id="contact-email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea id="contact-message" class="form-textarea" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send via WhatsApp</button>
+                </form>
+
+                <script>
+                    document.getElementById('contact-form').addEventListener('submit', function (e) {
+                        e.preventDefault();
+
+                        const name = document.getElementById('contact-name').value;
+                        const email = document.getElementById('contact-email').value;
+                        const message = document.getElementById('contact-message').value;
+
+                        // Valid format for international number without + or 00
+                        const phoneNumber = "918590468094";
+
+                        const text = `*New Inquiry from Website*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Message:* ${message}`;
+
+                        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
+
+                        window.open(whatsappUrl, '_blank');
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section-padding">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>AURELIA.</h4>
+                    <p>Elevating living spaces since 1998.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Shop</h5>
+                    <ul>
+                        <li><a href="#">Seating</a></li>
+                        <li><a href="#">Tables</a></li>
+                        <li><a href="#">Lighting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="about.html">Atelier</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h5>Newsletter</h5>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AURELIA Interiors. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

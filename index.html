@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURELIA | Luxury Furniture</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container flex-center header-inner">
+            <a href="index.html" class="logo">AURELIA.</a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Collections</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="contact.html" class="btn-text">Contact</a>
+                <div class="cart-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path
+                            d="M6 2L3 6V20C3 20.5304 3.21071 21.0391 3.58579 21.4142C3.96086 21.7893 4.46957 22 5 22H19C19.5304 22 20.0391 21.7893 20.4142 21.4142C20.7893 21.0391 21 20.5304 21 20V6L18 2H6Z"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3 6H21" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M16 10C16 11.0609 15.5786 12.0783 14.8284 12.8284C14.0783 13.5786 13.0609 14 12 14C10.9391 14 9.92172 13.5786 9.17157 12.8284C8.42143 12.0783 8 11.0609 8 10"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="cart-badge" style="display: none;">0</div>
+                </div>
+                <div class="menu-toggle">Menu</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="overlay"></div>
+            <img src="assets/images/hero-sofa.png" alt="Luxury Sofa" class="hero-img" data-speed="0.5">
+        </div>
+
+        <div class="hero-content container">
+            <h1 class="hero-title" data-aos="fade-up" data-aos-duration="1000">
+                <span class="d-block">Redefining</span>
+                <span class="d-block text-gold">Timeless Luxury</span>
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                Curated furniture for the distinguished home. <br>
+                Crafted with precision, designed for eternity.
+            </p>
+            <a href="shop.html" class="btn btn-primary" data-aos="fade-up" data-aos-delay="400">
+                Explore Collection
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Collection -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="overline">New Arrivals</span>
+                <h2>The Velvet Series</h2>
+            </div>
+
+            <div class="grid-3">
+                <!-- Product Card 1 -->
+                <a href="product.html?id=1" class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-img-wrapper">
+                        <img src="assets/images/chair-1.png" alt="Boucle Lounge Chair" class="product-img">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">View Details</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Lune Chair</h3>
+                        <p class="price">$1,250</p>
+                    </div>
+                </a>
+
+                <!-- Product Card 2 -->
+                <a href="product.html?id=2" class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-img-wrapper">
+                        <img src="assets/images/table-1.png" alt="Marble Coffee Table" class="product-img">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">View Details</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Onyx Table</h3>
+                        <p class="price">$3,400</p>
+                    </div>
+                </a>
+
+                <!-- Product Card 3 -->
+                <a href="product.html?id=3" class="product-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-img-wrapper">
+                        <img src="assets/images/hero-sofa.png" alt="Sofa" class="product-img">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">View Details</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>The Sovereign Sofa</h3>
+                        <p class="price">$5,800</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="flex-center" style="margin-top: 4rem;">
+                <a href="shop.html" class="btn-link">View All Collections</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story/Brand Teaser -->
+    <section class="brand-story section-padding">
+        <div class="container grid-2-uneven">
+            <div class="story-content" data-aos="fade-right">
+                <span class="overline">Our Philosophy</span>
+                <h2>Design that transcends time.</h2>
+                <p>At Aurelia, we believe furniture is not just functional—it is an extension of the soul. Each piece is
+                    handcrafted by master artisans, using only the finest materials sourced from around the globe.</p>
+                <a href="about.html" class="btn btn-outline">Read Our Story</a>
+            </div>
+            <div class="story-image" data-aos="fade-left">
+                <!-- We can reuse the chair image but maybe scale it or use CSS to crop it differently -->
+                <div class="img-box">
+                    <img src="assets/images/chair-1.png" alt="Craftsmanship">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section-padding">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>AURELIA.</h4>
+                    <p>Elevating living spaces since 1998.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Shop</h5>
+                    <ul>
+                        <li><a href="#">Seating</a></li>
+                        <li><a href="#">Tables</a></li>
+                        <li><a href="#">Lighting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="about.html">Atelier</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h5>Newsletter</h5>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AURELIA Interiors. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

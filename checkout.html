@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | AURELIA</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .checkout-container {
+            padding-top: 10rem;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container flex-center header-inner">
+            <a href="index.html" class="logo">AURELIA.</a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Collections</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="contact.html" class="btn-text">Contact</a>
+                <div class="cart-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path
+                            d="M6 2L3 6V20C3 20.5304 3.21071 21.0391 3.58579 21.4142C3.96086 21.7893 4.46957 22 5 22H19C19.5304 22 20.0391 21.7893 20.4142 21.4142C20.7893 21.0391 21 20.5304 21 20V6L18 2H6Z"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3 6H21" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="12" cy="11" r="3" />
+                    </svg>
+                    <div class="cart-badge" style="display: none;">0</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="checkout-container container">
+        <h1 class="page-title">Checkout</h1>
+
+        <div class="checkout-grid">
+            <!-- Form -->
+            <div class="checkout-form">
+                <h3>Shipping Details</h3>
+                <form id="checkout-form" style="margin-top: 2rem;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label
+                                style="display: block; margin-bottom: 0.5rem; color: var(--color-text-secondary);">First
+                                Name</label>
+                            <input type="text"
+                                style="width: 100%; padding: 0.8rem; background: transparent; border: 1px solid var(--color-border); color: #fff;">
+                        </div>
+                        <div class="form-group">
+                            <label
+                                style="display: block; margin-bottom: 0.5rem; color: var(--color-text-secondary);">Last
+                                Name</label>
+                            <input type="text"
+                                style="width: 100%; padding: 0.8rem; background: transparent; border: 1px solid var(--color-border); color: #fff;">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 1.5rem;">
+                        <label
+                            style="display: block; margin-bottom: 0.5rem; color: var(--color-text-secondary);">Address</label>
+                        <input type="text"
+                            style="width: 100%; padding: 0.8rem; background: transparent; border: 1px solid var(--color-border); color: #fff;">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+                        <div class="form-group">
+                            <label
+                                style="display: block; margin-bottom: 0.5rem; color: var(--color-text-secondary);">City</label>
+                            <input type="text"
+                                style="width: 100%; padding: 0.8rem; background: transparent; border: 1px solid var(--color-border); color: #fff;">
+                        </div>
+                        <div class="form-group">
+                            <label
+                                style="display: block; margin-bottom: 0.5rem; color: var(--color-text-secondary);">Postal
+                                Code</label>
+                            <input type="text"
+                                style="width: 100%; padding: 0.8rem; background: transparent; border: 1px solid var(--color-border); color: #fff;">
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 3rem;">Payment</h3>
+                    <div class="form-group" style="margin-top: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: var(--color-text-secondary);">Card
+                            Number</label>
+                        <input type="text" placeholder="0000 0000 0000 0000"
+                            style="width: 100%; padding: 0.8rem; background: transparent; border: 1px solid var(--color-border); color: #fff;">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 2rem;">Place
+                        Order</button>
+                </form>
+            </div>
+
+            <!-- Summary -->
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div id="checkout-items" style="margin-top: 2rem;">
+                    <!-- Injected by JS -->
+                </div>
+
+                <div class="summary-total">
+                    <div class="summary-row" style="border: none;">
+                        <span>Total</span>
+                        <span id="checkout-total">$0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Use inline script for page-specific logic to render summary -->
+    <script>
+        // Copy of products data needed unless we export it (not using modules here)
+        // Redefining simpler version or fetching from main.js context if possible?
+        // Best to just rely on localStorage which saves IDs.
+        // We will read localStorage and match with a local products array or just basic info if stored.
+        // BUT main.js already runs. We can expose 'cart' globally.
+    </script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        // Page specific logic, runs after main.js
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('checkout-items');
+            const totalEl = document.getElementById('checkout-total');
+            const cartData = JSON.parse(localStorage.getItem('aurelia_cart')) || [];
+
+            // We need product details. Since products is defined in main.js scope, 
+            // and main.js runs in global scope (no modules), 'products' variable should be available.
+
+            let total = 0;
+
+            if (typeof products !== 'undefined') {
+                cartData.forEach(item => {
+                    const product = products.find(p => p.id === item.id);
+                    if (product) {
+                        total += product.price * item.qty;
+                        container.innerHTML += `
+                            <div class="summary-row">
+                                <div>
+                                    <div style="font-weight: 500;">${product.name}</div>
+                                    <div style="font-size: 0.8rem; color: var(--color-text-secondary);">Qty: ${item.qty}</div>
+                                </div>
+                                <div>$${(product.price * item.qty).toLocaleString()}</div>
+                            </div>
+                        `;
+                    }
+                });
+                totalEl.textContent = '$' + total.toLocaleString();
+            }
+
+            // Mock Place Order
+            document.getElementById('checkout-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your order! This is a demo.');
+                localStorage.removeItem('aurelia_cart'); // Clear cart
+                window.location.href = 'index.html'; // Go home
+            });
+        });
+    </script>
+</body>
+
+</html>

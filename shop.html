@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections | AURELIA</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .page-header {
+            padding-top: 10rem;
+            padding-bottom: 4rem;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .filters {
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .filter-btn {
+            background: none;
+            border: none;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.8rem;
+            transition: var(--transition-fast);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            color: var(--color-accent);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container flex-center header-inner">
+            <a href="index.html" class="logo">AURELIA.</a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link" style="color: #fff;">Collections</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="contact.html" class="btn-text">Contact</a>
+                <div class="cart-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path
+                            d="M6 2L3 6V20C3 20.5304 3.21071 21.0391 3.58579 21.4142C3.96086 21.7893 4.46957 22 5 22H19C19.5304 22 20.0391 21.7893 20.4142 21.4142C20.7893 21.0391 21 20.5304 21 20V6L18 2H6Z"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3 6H21" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M16 10C16 11.0609 15.5786 12.0783 14.8284 12.8284C14.0783 13.5786 13.0609 14 12 14C10.9391 14 9.92172 13.5786 9.17157 12.8284C8.42143 12.0783 8 11.0609 8 10"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="cart-badge" style="display: none;">0</div>
+                </div>
+                <div class="menu-toggle">Menu</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <section class="page-header container" data-aos="fade-down">
+        <h1 class="page-title">The Collections</h1>
+        <p>Curated pieces for the modern sanctuary.</p>
+    </section>
+
+    <section class="container section-padding" style="padding-top: 0;">
+        <div class="filters" data-aos="fade-up">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Seating</button>
+            <button class="filter-btn">Tables</button>
+            <button class="filter-btn">Lighting</button>
+            <button class="filter-btn">Decor</button>
+        </div>
+
+        <div class="grid-3" id="product-grid">
+            <!-- Products injected by JS -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section-padding">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>AURELIA.</h4>
+                    <p>Elevating living spaces since 1998.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Shop</h5>
+                    <ul>
+                        <li><a href="#">Seating</a></li>
+                        <li><a href="#">Tables</a></li>
+                        <li><a href="#">Lighting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="about.html">Atelier</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h5>Newsletter</h5>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AURELIA Interiors. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

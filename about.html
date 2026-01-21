@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier | AURELIA</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .about-hero {
+            padding: 10rem 0 6rem;
+            text-align: left;
+        }
+
+        .about-hero h1 {
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .value-card {
+            padding: 2rem;
+            border: 1px solid var(--color-border);
+            transition: var(--transition-fast);
+        }
+
+        .value-card:hover {
+            border-color: var(--color-accent);
+        }
+
+        .value-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container flex-center header-inner">
+            <a href="index.html" class="logo">AURELIA.</a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Collections</a>
+                <a href="about.html" class="nav-link" style="color: #fff;">About</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="contact.html" class="btn-text">Contact</a>
+                <div class="cart-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path
+                            d="M6 2L3 6V20C3 20.5304 3.21071 21.0391 3.58579 21.4142C3.96086 21.7893 4.46957 22 5 22H19C19.5304 22 20.0391 21.7893 20.4142 21.4142C20.7893 21.0391 21 20.5304 21 20V6L18 2H6Z"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3 6H21" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M16 10C16 11.0609 15.5786 12.0783 14.8284 12.8284C14.0783 13.5786 13.0609 14 12 14C10.9391 14 9.92172 13.5786 9.17157 12.8284C8.42143 12.0783 8 11.0609 8 10"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="cart-badge" style="display: none;">0</div>
+                </div>
+                <div class="menu-toggle">Menu</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <section class="about-hero container" data-aos="fade-up">
+        <span class="overline">The Atelier</span>
+        <h1>Crafting legacies, not just furniture.</h1>
+        <p style="max-width: 600px; font-size: 1.1rem;">
+            Born from a passion for timeless design and uncompromising quality, Aurelia represents the pinnacle of
+            modern luxury living.
+        </p>
+    </section>
+
+    <section class="container section-padding">
+        <div class="grid-2-uneven">
+            <div data-aos="fade-right">
+                <img src="assets/images/chair-1.png" alt="Craftsmanship" style="width: 100%;">
+            </div>
+            <div data-aos="fade-left">
+                <h2>The Art of Detail</h2>
+                <p>Every curve, every stitch, every finish is a testament to our dedication to perfection. We work with
+                    the world's finest artisans who bring generations of expertise to every piece they create.</p>
+                <p>Our philosophy is simple: create objects that inspire and endure. In a world of disposable trends, we
+                    stand for permanence and heritage.</p>
+            </div>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                <h3>Sustainably Sourced</h3>
+                <p>We believe luxury incurs a responsibility. All our woods are ethically harvested and our fabrics
+                    eco-certified.</p>
+            </div>
+            <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                <h3>Master Craftsmanship</h3>
+                <p>Hand-finished by artisans with decades of experience, ensuring no two pieces are exactly alike.</p>
+            </div>
+            <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                <h3>Timeless Design</h3>
+                <p>Aesthetics that transcend eras, blending classical proportions with modern sensibilities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section-padding">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>AURELIA.</h4>
+                    <p>Elevating living spaces since 1998.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Shop</h5>
+                    <ul>
+                        <li><a href="#">Seating</a></li>
+                        <li><a href="#">Tables</a></li>
+                        <li><a href="#">Lighting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="about.html">Atelier</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h5>Newsletter</h5>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AURELIA Interiors. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
