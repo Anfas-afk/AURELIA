@@ -182,8 +182,71 @@ p {
 .cursor-outline {
     width: 40px;
     height: 40px;
-    border: 1px solid rgba(212, 175, 55, 0.5);
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    border: 1px solid rgba(212, 175, 55, 0.8);
+    transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+/* About Page Hero */
+.about-hero-section {
+    position: relative;
+    padding: 12rem 0 8rem;
+    overflow: hidden;
+}
+
+.about-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.about-hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(11, 11, 11, 0.3), rgba(11, 11, 11, 1));
+    z-index: 1;
+}
+
+.about-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.about-hero-content h1 {
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+/* About Page Values Grid */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.value-card {
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    transition: var(--transition-fast);
+}
+
+.value-card:hover {
+    border-color: var(--color-accent);
+}
+
+.value-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #fff;
 }
 
 /* Header */
@@ -835,38 +898,7 @@ p {
 
 
 
-.cursor-dot,
-.cursor-outline {
-    max-width: 0;
-    max-height: 0;
-    overflow: hidden;
-}
-
-.img-box {
-    padding-right: 2rem;
-}
-
-.img-box::after {
-    width: 80%;
-}
-
-.story-image {
-    overflow: hidden;
-}
-
-html,
-body {
-    width: 100%;
-    overflow-x: hidden;
-}
-
-/* Kill cursor overflow */
-.cursor-dot,
-.cursor-outline {
-    max-width: 0;
-    max-height: 0;
-    overflow: hidden;
-}
+/* Cleaned up erroneous styles */
 
 /* Safe container */
 .container {

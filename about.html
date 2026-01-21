@@ -7,40 +7,7 @@
     <title>Atelier | AURELIA</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        .about-hero {
-            padding: 10rem 0 6rem;
-            text-align: left;
-        }
-
-        .about-hero h1 {
-            max-width: 800px;
-            margin-bottom: 2rem;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .value-card {
-            padding: 2rem;
-            border: 1px solid var(--color-border);
-            transition: var(--transition-fast);
-        }
-
-        .value-card:hover {
-            border-color: var(--color-accent);
-        }
-
-        .value-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-    </style>
+    <!-- Internal styles moved to style.css -->
 </head>
 
 <body>
@@ -85,13 +52,23 @@
     </header>
 
     <!-- Page Content -->
-    <section class="about-hero container" data-aos="fade-up">
-        <span class="overline">The Atelier</span>
-        <h1>Crafting legacies, not just furniture.</h1>
-        <p style="max-width: 600px; font-size: 1.1rem;">
-            Born from a passion for timeless design and uncompromising quality, Aurelia represents the pinnacle of
-            modern luxury living.
-        </p>
+    <!-- Page Content -->
+    <section class="about-hero-section">
+        <div class="about-hero-bg">
+            <!-- Using a relevant background image, or fallback to a texture if needed. 
+                 Since we have hero-sofa.png and others, let's use a blurred or darkened version of an asset 
+                 or a solid color element if no specific about-hero image exists. 
+                 Using hero-sofa.png as placeholder for richness. -->
+            <img src="assets/images/hero-sofa.png" alt="Atelier Background">
+        </div>
+        <div class="container about-hero-content" data-aos="fade-up">
+            <span class="overline">The Atelier</span>
+            <h1>Crafting legacies, not just furniture.</h1>
+            <p style="max-width: 600px; font-size: 1.1rem;">
+                Born from a passion for timeless design and uncompromising quality, Aurelia represents the pinnacle of
+                modern luxury living.
+            </p>
+        </div>
     </section>
 
     <section class="container section-padding">
