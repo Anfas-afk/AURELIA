@@ -339,7 +339,7 @@ if (menuToggle) {
     menuToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         body.classList.toggle('menu-open');
-        menuToggle.textContent = navMenu.classList.contains('active') ? 'Close' : 'Menu';
+        menuToggle.classList.toggle('active'); // Toggle animation state
     });
 }
 

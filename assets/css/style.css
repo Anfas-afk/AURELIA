@@ -586,9 +586,7 @@ p {
     z-index: -1;
 }
 
-.story-image img {
-    /* Additional styling if needed */
-}
+
 
 /* Footer */
 .footer {
@@ -762,8 +760,39 @@ p {
     }
 
     .menu-toggle {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
         z-index: 101;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Hamburger Animation */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Hide Contact text on mobile to save space */
+    .header-actions .btn-text {
+        display: none;
     }
 
     .grid-2-uneven {
