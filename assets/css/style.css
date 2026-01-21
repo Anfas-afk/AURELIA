@@ -129,10 +129,13 @@ p {
 
 /* Utilities */
 .container {
-    width: 90%;
+
+    width: 100%;
     max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-sm);
+    margin-inline: auto;
+    padding-inline: 2rem;
+
+
 }
 
 .section-padding {
@@ -822,4 +825,60 @@ p {
     .footer-grid {
         grid-template-columns: 1fr;
     }
+}
+
+
+
+
+
+
+
+
+
+.cursor-dot,
+.cursor-outline {
+    max-width: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.img-box {
+    padding-right: 2rem;
+}
+
+.img-box::after {
+    width: 80%;
+}
+
+.story-image {
+    overflow: hidden;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Kill cursor overflow */
+.cursor-dot,
+.cursor-outline {
+    max-width: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* Safe container */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin-inline: auto;
+    padding-inline: 2rem;
+}
+
+/* Decorative containment */
+.hero,
+.story-image,
+.header {
+    overflow-x: hidden;
 }
