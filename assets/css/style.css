@@ -322,6 +322,8 @@ p {
 .cart-icon {
     position: relative;
     cursor: pointer;
+    align-items: center;
+    display: flex
 }
 
 .cart-badge {
