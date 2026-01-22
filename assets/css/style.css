@@ -44,6 +44,8 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -52,6 +54,7 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
     cursor: none;
     /* Custom cursor handling */
 }
@@ -866,6 +869,10 @@ p {
         gap: 4rem;
     }
 
+    .grid-3 {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -885,20 +892,14 @@ p {
         gap: 1rem;
     }
 
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr;
     }
 }
-
-
-
-
-
-
-
-
-
-/* Cleaned up erroneous styles */
 
 /* Safe container */
 .container {
